@@ -16,16 +16,50 @@ public class Word {
     /** Miwok translation for the word */
     private String mMiwokTranslation;
 
+    /** Audio resource ID for the word */
+    private int mAudioResourceId;
+
+    /** Image the represent the meaning     */
+    private int mImageResourceId = NO_IMAGE_PROVIDER;
+
+    private static final int NO_IMAGE_PROVIDER = -1;
+
     /**
      * Create a new Word object.
      *
      * @param defaultTranslation is the word in a language that the user is already familiar with
      *                           (such as English)
      * @param miwokTranslation is the word in the Miwok language
+     * @param audioResourceId is the resource ID for the audio file associated with this word.
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
+    }
+
+    /**
+     * Create a new Word object.
+     *
+     * @param defaultTranslation is the word in a language that the user is already familiar with
+     *                           (such as English)
+     * @param miwokTranslation is the word in the Miwok language
+     * @param imageResourceId is the drawable resource id for the image a of the word
+     * @param audioResourceId is the resource ID for the audio file associated with this word.
+     */
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
+    }
+
+    /**
+     *
+     * @return Weather or not there is an image for the word
+     */
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE_PROVIDER;
     }
 
     /**
@@ -42,4 +76,19 @@ public class Word {
         return mMiwokTranslation;
     }
 
+    /**
+     *
+     * @return the image resource ID of the word.
+     */
+    public int getmImageResourceId() {
+        return mImageResourceId;
+    }
+
+    /**
+     *
+     * @return the audio resource ID of the word.
+     */
+    public int getmAudioResourceId() {
+        return mAudioResourceId;
+    }
 }

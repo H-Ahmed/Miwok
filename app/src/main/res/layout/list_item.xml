@@ -2,20 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:minHeight="@dimen/list_item_height">
 
-    <TextView
-        android:id="@+id/miwok_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="lutti"/>
+    <ImageView
+        android:layout_width="@dimen/list_item_height"
+        android:layout_height="match_parent"
+        android:id="@+id/image"/>
 
-    <TextView
-        android:id="@+id/default_text_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="one"/>
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:gravity="center_vertical"
+        android:id="@+id/text_container"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/miwok_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            tools:text="lutti" />
+
+        <TextView
+            android:id="@+id/default_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            tools:text="one" />
+    </LinearLayout>
 
 </LinearLayout>
