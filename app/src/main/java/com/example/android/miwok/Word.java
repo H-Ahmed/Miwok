@@ -91,4 +91,18 @@ public class Word {
     public int getmAudioResourceId() {
         return mAudioResourceId;
     }
+
+    /**
+     *
+     * @return the string representaion of the {@link Word} object.
+     */
+    @Override
+    public String toString() {
+        return "Word{" +
+                "mDefaultTranslation='" + mDefaultTranslation + '\'' +
+                ", mMiwokTranslation='" + mMiwokTranslation + '\'' +
+                ", mAudioResourceId=" + mAudioResourceId +
+                ", mImageResourceId=" + mImageResourceId +
+                '}';
+    }
 }
